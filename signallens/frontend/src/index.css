@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* Soft dark theme: deep indigo surfaces with cyan and amber accents.
+   Colours are tokens, so the whole UI can be re-skinned in one place. */
+@theme {
+  --color-canvas: #0b0b1f;
+  --color-surface: #141432;
+  --color-surface-2: #1c1c44;
+  --color-border: #2b2b5c;
+  --color-ink: #e6e8ff;
+  --color-muted: #9ea3c9;
+  --color-cyan: #5ee7ff;
+  --color-amber: #ffb84d;
+  --color-danger: #ff7a8a;
+  --color-ok: #6ee7b7;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image:
+    radial-gradient(60rem 40rem at 10% -10%, rgb(94 231 255 / 0.07), transparent 60%),
+    radial-gradient(50rem 36rem at 110% 0%, rgb(255 184 77 / 0.05), transparent 55%);
+  background-attachment: fixed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
